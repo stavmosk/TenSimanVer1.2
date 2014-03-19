@@ -1,0 +1,141 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css\TenSiman.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.1/jquery.mobile.min.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.1/jquery.mobile.min.js"></script>
+        
+        <script type="text/javascript" src="js\javascript.js"></script>
+        <script type="text/javascript" src="js\login.js"></script>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <!-- cordova facebook plugin -->
+        <script type="text/javascript" src="cdv-plugin-fb-connect.js"></script>
+        <!-- facebook js sdk -->
+        <script type="text/javascript" src="facebook-js-sdk.js"></script>
+    </head>
+    <body>
+        <div id="fb-root"></div>
+        <!-- Main Page -->
+        <div id="main" data-role="page">
+<center>
+            <header data-role="header">
+                <h1>TenSiman</h1>
+                <!--<a href="#mainpage" data-icon="check" data-role="button" data-theme="b">Sign In</a>-->
+                <a href="#settings" data-icon="gear" data-role="button" data-theme="b">Settings</a>
+            </header>
+            <div data-role="content" id="login_pagecontent">
+                <br/><br/><br/>
+                <br/><br/>
+                
+                
+                        <button id="imgFBLogin">התחבר</button>
+                <br/>
+            </div>
+                </center>
+        </div>
+        
+        
+                <!-- Main Page -->
+        <div id="matchups" data-role="page">
+            <header data-role="header">
+                <h1>תן סימן</h1>
+                <a href="#settings" data-icon="gear" data-role="button" class="ui-btn-right" data-theme="b">הגדרות</a>
+            </header>
+            <div data-role="content" id="matchups_pagecontent">
+                <div id="playerBar" dir="rtl">
+                    
+                </div>
+                <br/><br/>
+                <div id="matchups_table_content" dir="rtl" align="center">
+                    <table width="80%" id="matchups_tableNew"></table>
+                    <br />----<br />
+                    <table width="80%" id="matchups_table"></table>
+                    
+                </div>
+                <br/><br/>
+            </div>
+            
+           <div data-role="content" id="friends_zone">
+                <div id="friends_zone_content" dir="rtl" align="center">
+                    <table width="80%" id="friends_bar">
+                        <tr>
+                            <td><a data-role="button" id="playWithFrineds" onclick="refreshFriendsZone(1, false);">play with friends</a></td>
+                            <td><a data-role="button" id="inviteFrineds" onclick="refreshFriendsZone(1, true);">Invite friends</a></td>
+
+                        </tr>
+                    </table>
+                                        <br /> <br />
+                    <table width="80%" id="friends_table"></table>
+                    
+                </div>
+                <br/><br/>
+            </div>
+            <footer data-role="footer"> 
+                <div data-role="navbar">
+		<ul>
+                    <li><a href=""><font size="4">איזור מומחה</font></a></li>
+                    <!--<li> <a href=""><font size="4">צור משחק</font></a></li>-->
+                        <li><a data-role="button" id="inviteFriends" onclick="refreshFriendsZone(1, false);">צור משחק  חדש</a></li>
+                        <li><a href="#"><font size="4">היכל התהילה</font></a></li>
+		</ul>
+                </div>
+            </footer> 
+        </div>
+        
+        
+        <!-- Game Page -->
+        <div id="game" data-role="page">
+<center>
+            <header data-role="header">
+                <span id="title">
+                <h1>נסו לזכור את המילים הבאות</h1>
+                </span>
+                <!--<a href="#mainpage" data-icon="check" data-role="button" data-theme="b">Sign In</a>
+                <a href="#settings" data-icon="gear" data-role="button" data-theme="b">Settings</a>-->
+            </header>
+
+                
+                <img id="myVideo" src=""  style="display: block;">
+                <div align="center" id="translation">
+                    <!--<input type="button" id="repeat" onclick="showVideos();" style="display: none">-->
+                    <!--<button-->
+                    <span id="translatedWord"></span>
+                    <a data-role="button" id="repeat" onclick="videoPlay(0);" data-inline="true" style="display: none;">נגן שוב</a>
+                    <!-- display should be none, it's block only for debug-->
+                    <a data-role="button" id="play" onclick="startPlay();" data-inline="true" style="display: block;">התחל</a>
+                </div>
+                <br/><br/>
+                <div align="center" id="answers">
+                <table width="100%">
+                    <tr>
+                        <td width="45%"><a data-role="button" id="answer1" class="answer" onclick="onClick_checkAnswer(this);">Answer1</a> </td>
+                        <td width="10%"></td>
+                        <td width="45%"><a data-role="button" id="answer2" class="answer" onclick="onClick_checkAnswer(this);">Answer2</a> </td>
+                    </tr>
+                    <tr>
+                        <td width="45%"><a data-role="button" id="answer3" class="answer" onclick="onClick_checkAnswer(this);">Answer3</a> </td>
+                        <td width="10%"></td>
+                        <td width="45%"><a data-role="button" id="answer4" class="answer" onclick="onClick_checkAnswer(this);">Answer4</a></td>
+                    </tr>
+                </table>
+                </div>
+                
+                <br>
+                <center><span id="timer"></span></center>
+                <br>
+           <!-- </div>
+                </td></tr></table></center>-->
+        </div>
+        
+
+    </body>
+</html>

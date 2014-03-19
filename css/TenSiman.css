@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05/01/2014, 23:39:26
+    Author     : Oren
+*/
+
+.video_container {
+    border: 1px solid silver;
+    height: fit-content;
+    margin: 0;
+    position: relative;
+}
+
+.layer1 {
+    //position: absolute;
+    z-index: 1;
+    //left: 0;
+    top: 0;
+    height: fit-content;
+}
+
+.layer2 {
+    position: absolute;
+    //z-index: 2;
+    //left: 0;
+    top: 0;
+    height: fit-content;
+    border: 1px solid green;
+}
+
+button.answer {
+    font-size: 18em !important;
+    height: 20px !important;
+}
